@@ -8,7 +8,7 @@ use App\Filter\InputFilter;
 use Laminas\Filter\StringTrim;
 use Laminas\Validator\EmailAddress;
 
-class AuthFilter extends InputFilter
+class TokenFilter extends InputFilter
 {
     public function setInputData(array $data)
     {

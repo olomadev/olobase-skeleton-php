@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Handler\Auth;
 
-use App\Filter\Auth\AuthFilter;
+use App\Filter\Auth\TokenFilter;
 use Olobase\Mezzio\Error\ErrorWrapperInterface;
 use Mezzio\Authentication\AuthenticationInterface;
 use Psr\Container\ContainerInterface;
@@ -19,7 +19,7 @@ class TokenHandlerFactory
         $error = $container->get(ErrorWrapperInterface::class);
         
         $pluginManager = $container->get(InputFilterPluginManager::class);
-        $inputFilter   = $pluginManager->get(AuthFilter::class);
+        $inputFilter   = $pluginManager->get(TokenFilter::class);
 
         return new TokenHandler(
             $container->get('config'),

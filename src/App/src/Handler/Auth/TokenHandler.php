@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Handler\Auth;
 
 use Exception;
-use App\Filter\Auth\AuthFilter;
+use App\Filter\Auth\TokenFilter;
 use Firebase\JWT\ExpiredException;
 use Mezzio\Authentication\UserInterface;
 use Laminas\Diactoros\Response\JsonResponse;
@@ -41,7 +41,7 @@ class TokenHandler implements RequestHandlerInterface
     public function __construct(
         array $config, 
         private Auth $auth,
-        private AuthFilter $filter,
+        private TokenFilter $filter,
         private Error $error
     ) {
         $this->config = $config;

@@ -41,7 +41,7 @@ class ConfigProvider
                     Filter\ObjectInputFilter::class => Container\ObjectInputFilterFactory::class,
                     Filter\CollectionInputFilter::class => Container\CollectionInputFilterFactory::class,
                     // Auth
-                    Filter\Auth\AuthFilter::class => InvokableFactory::class,
+                    Filter\Auth\TokenFilter::class => InvokableFactory::class,
                     Filter\Auth\ResetPasswordFilter::class => Filter\Auth\ResetPasswordFilterFactory::class,
                     Filter\Auth\ChangePasswordFilter::class => Filter\Auth\ChangePasswordFilterFactory::class,
                     // Account
